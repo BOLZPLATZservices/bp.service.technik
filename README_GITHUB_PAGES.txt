@@ -1,14 +1,12 @@
-BP Service Technik — komplette finale Website
+BP Service Technik — GitHub Pages Download — finale Version mit Preisen
 
-Enthalten:
-- index.html
-
-Eingetragene Kontaktdaten:
+Eingetragen:
+Name: Mario Schirra
+Telefon: 01515 1450094
 E-Mail: bp.service.technik@proton.me
-Telefon: 06888 208405
 
 Enthaltene Bereiche:
-- Startseite / Hero
+- Startseite
 - Leistungen
 - Smart Home
 - Router & WLAN
@@ -17,28 +15,29 @@ Enthaltene Bereiche:
 - Smartphone & Apps
 - TV & Medien
 - Schulungen & Erklärhilfe
-- Einsteiger-Schulung
-- Smartphone-Kurs
-- PC-Grundkurs
-- Router & WLAN erklärt
-- Sicher im Internet
-- Kleine Büros
+- Preise
 - Sicherheitscheck
-- Vertrauen / kein Zugriff ohne Zustimmung
-- Zielgruppen
+- Google-Terminkalender schwarz eingebettet
 - Ablauf
-- Google-Terminkalender
 - FAQ
 - Kontakt
-- Hinweis auf Impressum / Datenschutz
 
-GitHub Pages Upload:
-1. GitHub Repository öffnen.
-2. Alte index.html ersetzen.
-3. Neue index.html hochladen.
+Preise integriert:
+- Vor-Ort-Service: 65 € / Stunde
+- danach je angefangene 30 Minuten: 32,50 €
+- Router & WLAN: ab 69 €
+- Smart-Home-Kamera: ab 79 €
+- Sicherheitscheck: ab 79 €
+- Schulung / Erklärung: 65 € / Stunde
+- Anfahrt: ab 20 €
+
+GitHub Pages:
+1. ZIP entpacken.
+2. In deinem GitHub-Repository die alte index.html löschen oder ersetzen.
+3. Diese index.html hochladen.
 4. Commit changes klicken.
 5. Settings → Pages prüfen.
-6. Website aktualisiert sich automatisch.
+6. Die Website aktualisiert sich automatisch.
 
 Wichtig:
-Vor echter Veröffentlichung bitte Impressum und Datenschutz mit vollständigen Anbieterangaben ergänzen.
+Vor echter Veröffentlichung Impressum und Datenschutz vollständig ergänzen.
