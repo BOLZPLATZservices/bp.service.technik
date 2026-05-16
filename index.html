@@ -139,106 +139,21 @@
       </div>
 
       <div class="calendar-box">
-        <form class="booking-form" id="bookingForm">
-          <input id="bookingName" type="text" placeholder="Name">
-          <input id="bookingPhone" type="tel" placeholder="Telefonnummer">
-          <input id="bookingEmail" type="email" placeholder="E-Mail">
-          <select id="bookingService">
-            <option>Smart Home Einrichtung</option>
-            <option>Router / WLAN / Repeater</option>
-            <option>Sicherheitscheck</option>
-            <option>Computer / Laptop Hilfe</option>
-            <option>Smartphone / Apps</option>
-            <option>TV / Fire TV / Telekommunikation</option>
-            <option>Allgemeine Technik-Hilfe</option>
-          </select>
-          <input id="bookingDate" type="date">
-          <div class="slot-grid" aria-label="Uhrzeit auswählen">
-            <button class="slot" type="button" data-time="09:00">09:00</button>
-            <button class="slot" type="button" data-time="10:30">10:30</button>
-            <button class="slot" type="button" data-time="12:00">12:00</button>
-            <button class="slot" type="button" data-time="14:00">14:00</button>
-            <button class="slot" type="button" data-time="15:30">15:30</button>
-            <button class="slot" type="button" data-time="17:00">17:00</button>
-            <button class="slot" type="button" data-time="18:30">18:30</button>
-            <button class="slot" type="button" data-time="Nach Absprache">Absprache</button>
-          </div>
-          <textarea id="bookingMessage" placeholder="Kurz beschreiben, worum es geht. Beispiel: FritzBox einrichten, WLAN zu schwach, Kamera mit App verbinden, Sicherheitscheck."></textarea>
-
-          <div class="booking-output" id="bookingOutput">
-Noch keine Terminanfrage erstellt.
-          </div>
-
-          <div class="booking-actions">
-            <button class="booking-action" type="button" id="makeRequest">Anfrage erstellen</button>
-            <a class="booking-action secondary" id="mailLink" href="mailto:deine-email@example.com">Per E-Mail senden</a>
-            <a class="booking-action secondary" id="whatsappLink" href="#" target="_blank" rel="noopener">WhatsApp öffnen</a>
-          </div>
-
-          <p class="small-note">
-            Wichtig: E-Mail-Adresse und WhatsApp-Nummer müssen später im Code durch deine echten Kontaktdaten ersetzt werden.
+        <div class="booking-form">
+          <p class="eyebrow">Google Kalender</p>
+          <h2 style="font-size: clamp(28px, 4vw, 46px); margin-bottom: 18px;">Freien Termin auswählen</h2>
+          <p class="small-note" style="margin-bottom: 18px;">
+            Wähle direkt einen freien Termin im Google-Terminkalender. Die Buchung wird automatisch an den Kalender gesendet.
           </p>
-        </form>
+          <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2LqNOZzOujkOM3JADN1m4pYq2NUNpcoXv135sLJpkA7ceRGmkqhq0C__fq9yTNnGYWPI1FfaHU?gv=true" style="border: 0; width: 100%; min-height: 720px; border-radius: 24px; background: #ffffff;" width="100%" height="720" frameborder="0"></iframe>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="kontakt"><div class="wrap contact"><div class="contact-card"><p class="eyebrow">Kontakt</p><h2>Technik-Hilfe anfragen</h2><p>Beschreibe kurz, wobei Hilfe gebraucht wird: Router, WLAN, Smart Home, Sicherheitscheck, Computer, Smartphone, Drucker, TV, Kamera oder Anwendung.</p><p>Beispiel: „FritzBox einrichten“, „Smart-Home-Kamera mit App verbinden“, „WLAN im Haus verbessern“, „E-Mail am Laptop einrichten“.</p></div><div class="contact-card"><form class="form"><input type="text" placeholder="Name"><input type="tel" placeholder="Telefon"><input type="email" placeholder="E-Mail"><select><option>Bereich auswählen</option><option>Smart Home</option><option>Router / WLAN</option>
             <option>Sicherheitscheck</option><option>Netzwerk</option><option>Computer / Laptop</option><option>Smartphone / Apps</option><option>TV / Telekommunikation</option></select><textarea placeholder="Wobei brauchst du Hilfe?"></textarea><button class="submit" type="button">Anfrage vorbereiten</button></form></div></div></section>
-  <footer><div class="footer-inner"><div>© Technikservice · Smart Home · Router · Netzwerk · Computer</div><div>Impressum · Datenschutz · Kontakt</div></div></footer>
-
-  <script>
-    const slots = document.querySelectorAll(".slot");
-    let selectedTime = "Nach Absprache";
-
-    slots.forEach(slot => {
-      slot.addEventListener("click", () => {
-        slots.forEach(s => s.classList.remove("active"));
-        slot.classList.add("active");
-        selectedTime = slot.dataset.time;
-      });
-    });
-
-    const makeRequest = document.getElementById("makeRequest");
-    const output = document.getElementById("bookingOutput");
-    const mailLink = document.getElementById("mailLink");
-    const whatsappLink = document.getElementById("whatsappLink");
-
-    function value(id) {
-      return document.getElementById(id).value.trim();
-    }
-
-    makeRequest.addEventListener("click", () => {
-      const name = value("bookingName") || "Nicht angegeben";
-      const phone = value("bookingPhone") || "Nicht angegeben";
-      const email = value("bookingEmail") || "Nicht angegeben";
-      const service = value("bookingService");
-      const date = value("bookingDate") || "Nach Absprache";
-      const message = value("bookingMessage") || "Keine Zusatzinfo";
-
-      const text =
-`Neue Terminanfrage
-
-Name: ${name}
-Telefon: ${phone}
-E-Mail: ${email}
-Leistung: ${service}
-Wunschtermin: ${date}
-Uhrzeit: ${selectedTime}
-
-Beschreibung:
-${message}`;
-
-      output.innerText = text;
-
-      const subject = encodeURIComponent("Terminanfrage Technikservice");
-      const body = encodeURIComponent(text);
-      mailLink.href = `mailto:deine-email@example.com?subject=${subject}&body=${body}`;
-
-      const whatsappNumber = "491234567890"; // Hier deine Nummer eintragen, z. B. 491701234567
-      whatsappLink.href = `https://wa.me/${whatsappNumber}?text=${body}`;
-    });
-  </script>
+  <footer><div class="footer-inner"><div>© Technikservice · Telefon 06888 208405 · bp.service.technik@proton.me</div><div>Impressum · Datenschutz · Kontakt</div></div></footer>
 
 </body>
 </html>
