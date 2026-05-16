@@ -1,0 +1,1035 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BP Service Technik | Smart Home · Router · Netzwerk · Computer · Schulungen</title>
+  <meta name="description" content="BP Service Technik: Hilfe bei Smart Home, Router, WLAN, Netzwerk, Computer, Smartphone, Sicherheitscheck und verständlichen Technik-Schulungen. Termine online buchen.">
+  <meta property="og:title" content="BP Service Technik">
+  <meta property="og:description" content="Smart Home, Router, WLAN, Computer, Sicherheitscheck und Technik-Schulungen verständlich erklärt.">
+  <meta property="og:type" content="website">
+  <style>
+    :root{
+      --bg:#061014;
+      --bg2:#020607;
+      --panel:#0d1b22;
+      --panel2:#122832;
+      --text:#f3fbff;
+      --muted:#a9c2cc;
+      --line:rgba(255,255,255,.14);
+      --accent:#7df9ff;
+      --accent2:#a3ff78;
+      --warn:#ffd166;
+      --white:#fff;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at 10% 0%,rgba(125,249,255,.18),transparent 28%),
+        radial-gradient(circle at 88% 18%,rgba(163,255,120,.12),transparent 26%),
+        linear-gradient(180deg,var(--bg),var(--bg2));
+      color:var(--text);
+      font-family:Arial, Helvetica, sans-serif;
+    }
+    a{color:inherit;text-decoration:none}
+    .topbar{
+      background:#e8ffff;
+      color:#061014;
+      font-weight:800;
+      font-size:14px;
+      text-align:center;
+      padding:9px 14px;
+    }
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(6,16,20,.82);
+      border-bottom:1px solid var(--line);
+      backdrop-filter:blur(18px);
+    }
+    .nav-inner{
+      width:min(1220px,100%);
+      margin:auto;
+      padding:15px 22px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:950;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .logo{
+      width:46px;height:46px;
+      border-radius:16px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      color:#061014;
+      display:grid;
+      place-items:center;
+      font-weight:950;
+      box-shadow:0 0 35px rgba(125,249,255,.24);
+    }
+    .links{
+      display:flex;
+      gap:22px;
+      color:var(--muted);
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      white-space:nowrap;
+    }
+    .links a:hover{color:white}
+    .nav-cta{
+      border-radius:999px;
+      padding:12px 16px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      color:#061014;
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      white-space:nowrap;
+    }
+    .hero{
+      min-height:88vh;
+      display:grid;
+      align-items:center;
+      padding:82px 22px 72px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:after{
+      content:"";
+      position:absolute;
+      inset:auto 0 0 0;
+      height:160px;
+      background:linear-gradient(0deg,var(--bg2),transparent);
+      pointer-events:none;
+    }
+    .wrap{
+      width:min(1220px,100%);
+      margin:auto;
+      position:relative;
+      z-index:1;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:44px;
+      align-items:center;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.055);
+      border-radius:999px;
+      padding:11px 15px;
+      color:#d7f8ff;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      font-size:12px;
+    }
+    h1{
+      margin:22px 0 0;
+      font-size:clamp(44px,7vw,92px);
+      line-height:.94;
+      letter-spacing:-.055em;
+      text-transform:uppercase;
+    }
+    .lead{
+      max-width:720px;
+      margin:25px 0 0;
+      color:#d5e7ec;
+      font-size:clamp(17px,2vw,21px);
+      line-height:1.65;
+    }
+    .buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:34px;
+    }
+    .btn{
+      border-radius:999px;
+      padding:16px 22px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:13px;
+      border:1px solid var(--line);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#061014;border:none}
+    .btn.white{background:white;color:#061014;border:none}
+    .hero-card{
+      border:1px solid var(--line);
+      border-radius:30px;
+      background:linear-gradient(145deg,rgba(255,255,255,.085),rgba(255,255,255,.025));
+      padding:26px;
+      box-shadow:0 30px 90px rgba(0,0,0,.35);
+    }
+    .status{display:grid;gap:14px}
+    .status-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      padding:16px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(0,0,0,.18);
+    }
+    .status-row strong{font-size:16px}
+    .status-row span{color:var(--muted);font-size:13px;line-height:1.45}
+    .dot{
+      width:12px;height:12px;border-radius:999px;
+      background:var(--accent2);
+      box-shadow:0 0 18px var(--accent2);
+      flex:0 0 auto;
+    }
+    section{padding:86px 22px}
+    .section-alt{
+      background:rgba(255,255,255,.035);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:28px;
+      margin-bottom:34px;
+    }
+    .eyebrow{
+      margin:0;
+      color:var(--accent);
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:12px;
+      font-weight:900;
+    }
+    h2{
+      margin:10px 0 0;
+      font-size:clamp(34px,5vw,64px);
+      line-height:.95;
+      letter-spacing:-.045em;
+      text-transform:uppercase;
+    }
+    h3{margin:0;font-size:24px;text-transform:uppercase;letter-spacing:-.03em}
+    .section-head p:last-child{
+      max-width:560px;
+      color:var(--muted);
+      line-height:1.7;
+    }
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .card{
+      border:1px solid var(--line);
+      border-radius:26px;
+      background:rgba(255,255,255,.045);
+      padding:28px;
+      min-height:250px;
+    }
+    .card.highlight{background:linear-gradient(145deg,rgba(125,249,255,.10),rgba(163,255,120,.04))}
+    .icon{
+      width:54px;height:54px;
+      border-radius:18px;
+      background:rgba(125,249,255,.12);
+      border:1px solid rgba(125,249,255,.28);
+      display:grid;
+      place-items:center;
+      font-size:26px;
+      margin-bottom:22px;
+    }
+    .card p,.text p{color:var(--muted);line-height:1.7;margin:14px 0 0}
+    .list{
+      margin:18px 0 0;
+      padding:0;
+      list-style:none;
+      color:#dcebf0;
+      line-height:1.85;
+    }
+    .list li:before{
+      content:"✓";
+      color:var(--accent2);
+      margin-right:8px;
+      font-weight:900;
+    }
+    .split{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:28px;
+      align-items:start;
+    }
+    .info-box{
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:34px;
+      background:linear-gradient(145deg,rgba(125,249,255,.08),rgba(255,255,255,.035));
+    }
+    .info-box p{color:#d5e7ec;line-height:1.75;font-size:17px}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .step{
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:24px;
+      background:rgba(0,0,0,.18);
+    }
+    .step span{
+      display:inline-grid;
+      place-items:center;
+      width:38px;height:38px;
+      border-radius:999px;
+      background:var(--accent);
+      color:#061014;
+      font-weight:950;
+      margin-bottom:16px;
+    }
+    .small{color:var(--muted);font-size:13px;line-height:1.55}
+    .training-card{
+      min-height:320px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+    .price{
+      margin-top:22px;
+      display:inline-flex;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:10px 13px;
+      color:#e8ffff;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      width:max-content;
+    }
+
+    .price-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .price-card{
+      border:1px solid var(--line);
+      border-radius:28px;
+      background:rgba(255,255,255,.045);
+      padding:28px;
+      min-height:260px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+    .price-card.main{
+      background:linear-gradient(145deg,rgba(125,249,255,.14),rgba(163,255,120,.08));
+      border-color:rgba(125,249,255,.35);
+    }
+    .price-value{
+      margin:18px 0 8px;
+      font-size:38px;
+      line-height:1;
+      font-weight:950;
+      letter-spacing:-.05em;
+      color:#e8ffff;
+    }
+    .price-value span{
+      font-size:14px;
+      letter-spacing:.02em;
+      color:var(--muted);
+      font-weight:700;
+    }
+    .price-note{
+      margin-top:18px;
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:22px;
+      background:rgba(0,0,0,.18);
+      padding:20px;
+      color:#d5e7ec;
+      line-height:1.7;
+    }
+    .price-note strong{color:white}
+
+    .calendar-wrap{
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:30px;
+      padding:26px;
+      background:#000000;
+      box-shadow:0 24px 80px rgba(0,0,0,.45);
+    }
+    .contact{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:24px;
+    }
+    .contact-card{
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:34px;
+      background:rgba(255,255,255,.045);
+    }
+    .contact-card p{color:var(--muted);line-height:1.7}
+    .contact-methods{
+      display:grid;
+      gap:12px;
+      margin-top:22px;
+    }
+    .contact-method{
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+      background:rgba(0,0,0,.16);
+    }
+    .contact-method strong{display:block;margin-bottom:5px}
+    .faq details{
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px 20px;
+      background:rgba(255,255,255,.035);
+      margin-bottom:12px;
+    }
+    .faq summary{
+      cursor:pointer;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+    }
+    .faq p{color:var(--muted);line-height:1.7}
+    .notice{
+      border:1px solid rgba(255,209,102,.35);
+      background:rgba(255,209,102,.08);
+      border-radius:24px;
+      padding:22px;
+      color:#ffe4a3;
+      line-height:1.65;
+    }
+    footer{
+      border-top:1px solid var(--line);
+      padding:34px 22px;
+      color:var(--muted);
+    }
+    .footer-inner{
+      width:min(1220px,100%);
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+      line-height:1.6;
+    }
+    @media(max-width:1000px){
+      .links{display:none}
+      .hero-grid,.split,.contact{grid-template-columns:1fr}
+      .grid-3,.grid-4,.price-grid{grid-template-columns:repeat(2,1fr)}
+      .steps{grid-template-columns:repeat(2,1fr)}
+      .section-head{align-items:start;flex-direction:column}
+    }
+    @media(max-width:640px){
+      .topbar{font-size:12px}
+      .brand span{font-size:13px}
+      .nav-cta{display:none}
+      .grid-2,.grid-3,.grid-4,.steps,.price-grid{grid-template-columns:1fr}
+      .buttons{flex-direction:column}
+      h1{font-size:44px}
+      section{padding:68px 18px}
+      .hero{padding-left:18px;padding-right:18px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">BP Service Technik · Mario Schirra · 01515 1450094 · bp.service.technik@proton.me</div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top">
+        <div class="logo">BP</div>
+        <span>Service Technik</span>
+      </a>
+      <div class="links">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#schulungen">Schulungen</a>
+        <a href="#preise">Preise</a>
+        <a href="#sicherheitscheck">Sicherheitscheck</a>
+        <a href="#termin">Termin</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+      <a class="nav-cta" href="#termin">Termin buchen</a>
+    </div>
+  </nav>
+
+  <header id="top" class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="pill">Smart Home · Router · Netzwerk · Computer · Schulung</div>
+        <h1>Technik verständlich gemacht.</h1>
+        <p class="lead">
+          Hilfe bei Smart Home, Router, WLAN, Netzwerk, Computer, Smartphone, Drucker, TV, Anwendungen und Sicherheitscheck. Dazu einfache Schulungen für Menschen, die ihre Technik wirklich verstehen und selbst bedienen möchten.
+        </p>
+        <div class="buttons">
+          <a class="btn primary" href="#termin">Termin online buchen</a>
+          <a class="btn" href="#schulungen">Schulungen ansehen</a>
+          <a class="btn" href="#preise">Preise ansehen</a>
+          <a class="btn" href="#sicherheitscheck">Sicherheitscheck</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="status">
+          <div class="status-row"><div><strong>Einrichtung</strong><br><span>Router, WLAN, Smart Home, Computer, Apps, Drucker, TV</span></div><div class="dot"></div></div>
+          <div class="status-row"><div><strong>Erklärung</strong><br><span>Schritt für Schritt zeigen, nicht nur schnell einstellen</span></div><div class="dot"></div></div>
+          <div class="status-row"><div><strong>Schulung</strong><br><span>Einzelhilfe für Einsteiger, Senioren und kleine Büros</span></div><div class="dot"></div></div>
+          <div class="status-row"><div><strong>Sicherheitscheck</strong><br><span>WLAN, Updates, Passwörter, Backups, Zugriffsrechte</span></div><div class="dot"></div></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="leistungen">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Leistungen</p>
+          <h2>Hilfe bei Alltagstechnik</h2>
+        </div>
+        <p>Die Seite ist so aufgebaut, dass Kunden sofort verstehen: Hier gibt es nicht nur Reparatur, sondern Einrichtung, Erklärung und saubere Unterstützung.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon">🏠</div>
+          <h3>Smart Home</h3>
+          <p>Kameras, Steckdosen, Lampen, Sensoren und Apps sauber verbinden.</p>
+          <ul class="list">
+            <li>Kamera mit App verbinden</li>
+            <li>Smarte Steckdosen einrichten</li>
+            <li>Lichtsteuerung erklären</li>
+            <li>Geräte benennen und ordnen</li>
+            <li>Sprachassistenten vorbereiten</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">📡</div>
+          <h3>Router & WLAN</h3>
+          <p>Internet stabil machen und die wichtigsten Einstellungen erklären.</p>
+          <ul class="list">
+            <li>Router-Grundeinrichtung</li>
+            <li>WLAN verbessern</li>
+            <li>Repeater verbinden</li>
+            <li>Gäste-WLAN einrichten</li>
+            <li>Passwort und Sicherheit prüfen</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">💻</div>
+          <h3>Computer</h3>
+          <p>Hilfe bei Windows, Programmen, E-Mail, Drucker und Dateien.</p>
+          <ul class="list">
+            <li>Windows einrichten</li>
+            <li>Programme installieren</li>
+            <li>E-Mail einrichten</li>
+            <li>Drucker verbinden</li>
+            <li>Dateien sichern</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">🌐</div>
+          <h3>Netzwerk</h3>
+          <p>Geräte im Haus sinnvoll verbinden und Fehler finden.</p>
+          <ul class="list">
+            <li>LAN / WLAN prüfen</li>
+            <li>Netzwerkgeräte verbinden</li>
+            <li>IP-Probleme finden</li>
+            <li>Internet-Ausfälle eingrenzen</li>
+            <li>Geräteübersicht erstellen</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">📱</div>
+          <h3>Smartphone & Apps</h3>
+          <p>Einrichtung, Erklärung und Ordnung auf dem Handy.</p>
+          <ul class="list">
+            <li>Apps installieren</li>
+            <li>Konten einrichten</li>
+            <li>WhatsApp / E-Mail erklären</li>
+            <li>Fotos sichern</li>
+            <li>App-Berechtigungen prüfen</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">📺</div>
+          <h3>TV & Medien</h3>
+          <p>Unterstützung bei Fire TV, Streaming, TV, Ton und Verbindung.</p>
+          <ul class="list">
+            <li>Fire TV einrichten</li>
+            <li>Streaming-Apps verbinden</li>
+            <li>TV mit WLAN verbinden</li>
+            <li>Ton / Bluetooth prüfen</li>
+            <li>Bedienung erklären</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="schulungen" class="section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Schulungen & Erklärhilfe</p>
+          <h2>Technik lernen statt nur benutzen</h2>
+        </div>
+        <p>Für Kunden, die nicht nur eine schnelle Einrichtung wollen, sondern verstehen möchten, wie Router, Computer, Smartphone, Smart Home und Sicherheit funktionieren.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card training-card highlight">
+          <div>
+            <div class="icon">👥</div>
+            <h3>Einsteiger-Schulung</h3>
+            <p>Für Menschen, die sich mit Computer, Smartphone oder Internet unsicher fühlen.</p>
+            <ul class="list">
+              <li>Grundbegriffe einfach erklärt</li>
+              <li>Internet, WLAN und Apps verstehen</li>
+              <li>Sicheres Klicken und Erkennen von Warnungen</li>
+              <li>Geduldig, langsam und verständlich</li>
+            </ul>
+          </div>
+          <span class="price">Einzeltermin / nach Absprache</span>
+        </article>
+
+        <article class="card training-card">
+          <div>
+            <div class="icon">📱</div>
+            <h3>Smartphone-Kurs</h3>
+            <p>Das eigene Handy besser bedienen und wichtige Funktionen verstehen.</p>
+            <ul class="list">
+              <li>Kontakte, Fotos, WhatsApp, E-Mail</li>
+              <li>Apps installieren und löschen</li>
+              <li>Speicherplatz verstehen</li>
+              <li>Backups und Cloud erklären</li>
+            </ul>
+          </div>
+          <span class="price">Für Senioren geeignet</span>
+        </article>
+
+        <article class="card training-card">
+          <div>
+            <div class="icon">🖥️</div>
+            <h3>PC-Grundkurs</h3>
+            <p>Windows, Dateien, Ordner, Browser und Programme verständlich erklärt.</p>
+            <ul class="list">
+              <li>Dateien finden und speichern</li>
+              <li>Programme öffnen und verwalten</li>
+              <li>Browser und E-Mail sicher nutzen</li>
+              <li>Drucker und Geräte verstehen</li>
+            </ul>
+          </div>
+          <span class="price">Zuhause oder vor Ort</span>
+        </article>
+
+        <article class="card training-card">
+          <div>
+            <div class="icon">📡</div>
+            <h3>Router & WLAN erklärt</h3>
+            <p>Was ist WLAN, was macht der Router, wofür ist ein Repeater?</p>
+            <ul class="list">
+              <li>Router-Oberfläche erklären</li>
+              <li>WLAN-Name und Passwort verstehen</li>
+              <li>Gästenetz einrichten</li>
+              <li>Warum Internet manchmal langsam ist</li>
+            </ul>
+          </div>
+          <span class="price">Mit praktischer Einrichtung</span>
+        </article>
+
+        <article class="card training-card">
+          <div>
+            <div class="icon">🔐</div>
+            <h3>Sicher im Internet</h3>
+            <p>Gefahren erkennen, ohne Angst vor Technik zu machen.</p>
+            <ul class="list">
+              <li>Phishing-Mails erkennen</li>
+              <li>Passwörter richtig nutzen</li>
+              <li>2-Faktor-Anmeldung erklären</li>
+              <li>Fake-Anrufe und Betrug erkennen</li>
+            </ul>
+          </div>
+          <span class="price">Sehr sinnvoll für Einsteiger</span>
+        </article>
+
+        <article class="card training-card">
+          <div>
+            <div class="icon">🏢</div>
+            <h3>Kleine Büros</h3>
+            <p>Grundlagen für Selbstständige, Vereine oder kleine Arbeitsplätze.</p>
+            <ul class="list">
+              <li>E-Mail und Kalender einrichten</li>
+              <li>Datensicherung besprechen</li>
+              <li>Gemeinsame Geräte verbinden</li>
+              <li>Grundstruktur für Ordnung schaffen</li>
+            </ul>
+          </div>
+          <span class="price">Individuell planbar</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="preise">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Preise</p>
+          <h2>Klare Preise für Technikservice</h2>
+        </div>
+        <p>Transparente Richtpreise für Vor-Ort-Hilfe, Einrichtung, Sicherheitscheck und Schulungen. Der genaue Aufwand wird vor Beginn abgestimmt.</p>
+      </div>
+
+      <div class="price-grid">
+        <article class="price-card main">
+          <div>
+            <div class="icon">🛠️</div>
+            <h3>Vor-Ort-Service</h3>
+            <div class="price-value">65 € <span>/ Stunde</span></div>
+            <p>Mindestabrechnung: 1 Stunde. Danach je angefangene 30 Minuten: 32,50 €.</p>
+          </div>
+          <span class="price">Standard-Service</span>
+        </article>
+
+        <article class="price-card">
+          <div>
+            <div class="icon">📡</div>
+            <h3>Router & WLAN</h3>
+            <div class="price-value">ab 69 €</div>
+            <p>Router einrichten, WLAN prüfen, Repeater verbinden, Gäste-WLAN oder Passwortwechsel.</p>
+          </div>
+          <span class="price">Internet & Netzwerk</span>
+        </article>
+
+        <article class="price-card">
+          <div>
+            <div class="icon">🏠</div>
+            <h3>Smart-Home-Kamera</h3>
+            <div class="price-value">ab 79 €</div>
+            <p>Kamera mit WLAN und App verbinden, Grundfunktionen erklären und Zugriffe prüfen.</p>
+          </div>
+          <span class="price">Tür / Hof / Eingang</span>
+        </article>
+
+        <article class="price-card">
+          <div>
+            <div class="icon">🛡️</div>
+            <h3>Sicherheitscheck</h3>
+            <div class="price-value">ab 79 €</div>
+            <p>Router, WLAN, Updates, Passwörter, Smart-Home-Geräte, Smartphone-Berechtigungen und Backup-Möglichkeiten.</p>
+          </div>
+          <span class="price">Schutz & Kontrolle</span>
+        </article>
+
+        <article class="price-card">
+          <div>
+            <div class="icon">👥</div>
+            <h3>Schulung / Erklärung</h3>
+            <div class="price-value">65 € <span>/ Stunde</span></div>
+            <p>Einsteigerhilfe für Smartphone, Computer, Internet, E-Mail, KI, Sicherheit und Apps.</p>
+          </div>
+          <span class="price">Geduldig erklärt</span>
+        </article>
+
+        <article class="price-card">
+          <div>
+            <div class="icon">🚗</div>
+            <h3>Anfahrt</h3>
+            <div class="price-value">ab 20 €</div>
+            <p>Bis 10 km: 20 €. 10–25 km: 30 €. 25–40 km: 45 €. Weitere Strecke nach Absprache.</p>
+          </div>
+          <span class="price">Vorher abgestimmt</span>
+        </article>
+      </div>
+
+      <div class="price-note">
+        <strong>Hinweis:</strong> Preise gelten als Richtwerte für Privatkunden und werden vor Beginn des Auftrags besprochen. Material, Ersatzteile oder zusätzliche Geräte werden nur nach vorheriger Zustimmung berechnet. Keine Änderungen ohne Freigabe. Passwörter werden nicht gespeichert.
+      </div>
+    </div>
+  </section>
+
+  <section id="sicherheitscheck">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Sicherheitscheck</p>
+          <h2>Schutz für Internet, Geräte & Zuhause</h2>
+        </div>
+        <p>Der Sicherheitscheck ist eine praktische Prüfung der wichtigsten Einstellungen. Keine Hacker-Spielerei, sondern verständliche Kontrolle für echte Alltagssicherheit.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon">📡</div>
+          <h3>Router & WLAN</h3>
+          <ul class="list">
+            <li>WLAN-Verschlüsselung prüfen</li>
+            <li>Standardpasswörter vermeiden</li>
+            <li>Gäste-WLAN einrichten</li>
+            <li>WPS prüfen / deaktivieren</li>
+            <li>Firmware-Updates kontrollieren</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">🏠</div>
+          <h3>Smart Home</h3>
+          <ul class="list">
+            <li>Kamera-Zugriffe prüfen</li>
+            <li>App-Berechtigungen ansehen</li>
+            <li>Alte Geräte entfernen</li>
+            <li>Cloud-Zugänge erklären</li>
+            <li>Geräte sinnvoll benennen</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">💻</div>
+          <h3>Computer & Daten</h3>
+          <ul class="list">
+            <li>Windows-Updates prüfen</li>
+            <li>Virenschutz kontrollieren</li>
+            <li>Backup-Möglichkeit besprechen</li>
+            <li>Browser-Sicherheit prüfen</li>
+            <li>Alte Programme ansehen</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">🔐</div>
+          <h3>Passwörter & Konten</h3>
+          <ul class="list">
+            <li>Passwort-Struktur erklären</li>
+            <li>2-Faktor-Schutz empfehlen</li>
+            <li>Wichtige Konten prüfen</li>
+            <li>Passwortmanager erklären</li>
+            <li>Keine Passwortspeicherung durch den Service</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">📱</div>
+          <h3>Smartphone</h3>
+          <ul class="list">
+            <li>App-Berechtigungen prüfen</li>
+            <li>Updates kontrollieren</li>
+            <li>Bildschirmsperre prüfen</li>
+            <li>Cloud-Backup erklären</li>
+            <li>Unnötige Apps entfernen</li>
+          </ul>
+        </article>
+
+        <article class="card highlight">
+          <div class="icon">✅</div>
+          <h3>Checkliste</h3>
+          <p>Am Ende wird einfach zusammengefasst, was geprüft wurde und welche nächsten Schritte sinnvoll sind.</p>
+          <ul class="list">
+            <li>Was ist sicher?</li>
+            <li>Was sollte geändert werden?</li>
+            <li>Welche Updates fehlen?</li>
+            <li>Welche Geräte sind verbunden?</li>
+            <li>Empfehlung für nächste Schritte</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="wrap split">
+      <div class="info-box">
+        <p class="eyebrow">Sicherheit & Vertrauen</p>
+        <h2>Kein Zugriff ohne Zustimmung.</h2>
+        <p>
+          Zugriff auf Router, Computer, Netzwerkgeräte, Smart-Home-Konfigurationen oder Anwendungen erfolgt nur nach ausdrücklicher Freigabe des Kunden. Passwörter werden nicht gespeichert. Änderungen werden erklärt und nur durchgeführt, wenn sie gewünscht sind.
+        </p>
+        <p>
+          Fernwartung erfolgt nur nach aktiver Freigabe. Vor-Ort-Termine sind möglich. Bei jedem Schritt wird erklärt, was gemacht wird und warum es sinnvoll ist.
+        </p>
+      </div>
+
+      <div class="info-box">
+        <p class="eyebrow">Für wen?</p>
+        <h2>Geeignet für</h2>
+        <ul class="list">
+          <li>Privathaushalte</li>
+          <li>Senioren und Einsteiger</li>
+          <li>Menschen mit wenig Technik-Erfahrung</li>
+          <li>Kleine Büros, Vereine und Selbstständige</li>
+          <li>Alle, die Technik erklärt bekommen möchten</li>
+          <li>Alle, die ihr Heimnetz sicherer machen wollen</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="ablauf">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Ablauf</p>
+          <h2>So läuft ein Auftrag ab</h2>
+        </div>
+        <p>Einfach, klar und ohne Fachchinesisch. Der Kunde soll danach nicht nur ein funktionierendes Gerät haben, sondern die Bedienung besser verstehen.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step"><span>1</span><h3>Anfrage</h3><p class="small">Problem oder Wunsch kurz beschreiben: Router, WLAN, Smart Home, Computer, Schulung oder Sicherheitscheck.</p></div>
+        <div class="step"><span>2</span><h3>Termin</h3><p class="small">Online über Google-Kalender buchen oder telefonisch abstimmen.</p></div>
+        <div class="step"><span>3</span><h3>Einrichtung</h3><p class="small">Geräte, Apps, Router oder Netzwerk sauber konfigurieren.</p></div>
+        <div class="step"><span>4</span><h3>Erklärung</h3><p class="small">Alles verständlich zeigen, damit es danach selbst nutzbar ist.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="termin" class="section-alt">
+    <div class="wrap split">
+      <div class="info-box">
+        <p class="eyebrow">Terminkalender</p>
+        <h2>Termin online buchen</h2>
+        <p>
+          Wähle direkt einen freien Termin im Google-Terminkalender. Der Kalender ist dunkel eingebettet und die Buchung wird automatisch an den Kalender gesendet.
+        </p>
+        <ul class="list">
+          <li>Smart Home Einrichtung</li>
+          <li>Router / WLAN / Repeater</li>
+          <li>Sicherheitscheck</li>
+          <li>Computer / Laptop Hilfe</li>
+          <li>Smartphone / Apps</li>
+          <li>Schulung und Erklärung</li>
+        </ul>
+      </div>
+
+      <div class="calendar-wrap">
+        <p class="eyebrow">Google Kalender</p>
+        <h2 style="font-size:clamp(28px,4vw,46px);margin-bottom:18px;">Freien Termin auswählen</h2>
+        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2LqNOZzOujkOM3JADN1m4pYq2NUNpcoXv135sLJpkA7ceRGmkqhq0C__fq9yTNnGYWPI1FfaHU?gv=true" style="border:0;width:100%;min-height:720px;border-radius:24px;background:#000000;filter:invert(1) hue-rotate(180deg) contrast(.92) brightness(.95);" width="100%" height="720" frameborder="0"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">FAQ</p>
+          <h2>Häufige Fragen</h2>
+        </div>
+        <p>Kurze Antworten für Kunden, die vor einem Termin wissen wollen, wie der Service abläuft.</p>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>Muss ich meine Passwörter herausgeben?</summary>
+          <p>Nein. Passwörter werden nicht gespeichert. Falls ein Passwort eingegeben werden muss, kann der Kunde es selbst eingeben. Änderungen werden vorher erklärt.</p>
+        </details>
+        <details>
+          <summary>Kann ich auch nur eine Erklärung buchen?</summary>
+          <p>Ja. Es gibt reine Erklär- und Schulungstermine, zum Beispiel für Smartphone, Computer, Router, E-Mail, Apps oder sicheres Internet.</p>
+        </details>
+        <details>
+          <summary>Hilfst du auch älteren Menschen?</summary>
+          <p>Ja. Die Schulungen sind bewusst langsam, einfach und alltagstauglich aufgebaut. Es wird Schritt für Schritt erklärt.</p>
+        </details>
+        <details>
+          <summary>Machst du auch Fernwartung?</summary>
+          <p>Fernwartung ist möglich, aber nur mit ausdrücklicher Freigabe des Kunden. Der Kunde kann die Verbindung jederzeit beenden.</p>
+        </details>
+        <details>
+          <summary>Kannst du Smart-Home-Kameras einrichten?</summary>
+          <p>Ja, inklusive App-Verbindung, WLAN-Verbindung, Erklärung der Zugriffsmöglichkeiten und Sicherheitsprüfung der Einstellungen.</p>
+        </details>
+        <details>
+          <summary>Kannst du einen Sicherheitscheck machen?</summary>
+          <p>Ja. Geprüft werden unter anderem Router, WLAN, Updates, Passwörter, Smartphone-Berechtigungen, Smart-Home-Geräte und Backup-Möglichkeiten.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" class="section-alt">
+    <div class="wrap contact">
+      <div class="contact-card">
+        <p class="eyebrow">Kontakt</p>
+        <h2>Technik-Hilfe anfragen</h2>
+        <p><strong>Mario Schirra</strong><br>BP Service Technik</p>
+        <p>
+          Beschreibe kurz, wobei Hilfe gebraucht wird: Router, WLAN, Smart Home, Sicherheitscheck, Computer, Smartphone, Drucker, TV, Kamera, Anwendung oder Schulung.
+        </p>
+        <div class="contact-methods">
+          <a class="contact-method" href="tel:015151450094">
+            <strong>Telefon</strong>
+            01515 1450094
+          </a>
+          <a class="contact-method" href="mailto:bp.service.technik@proton.me">
+            <strong>E-Mail</strong>
+            bp.service.technik@proton.me
+          </a>
+          <a class="contact-method" href="#termin">
+            <strong>Online-Termin</strong>
+            Direkt im Google-Kalender buchen
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <p class="eyebrow">Beispiel-Anfragen</p>
+        <h2>Wobei kann geholfen werden?</h2>
+        <ul class="list">
+          <li>„Meine FritzBox soll eingerichtet werden.“</li>
+          <li>„Mein WLAN ist im Haus zu schwach.“</li>
+          <li>„Ich brauche eine Smart-Home-Kamera mit App.“</li>
+          <li>„Ich möchte mein Handy besser verstehen.“</li>
+          <li>„Ich möchte einen Sicherheitscheck für Router und Geräte.“</li>
+          <li>„Ich brauche eine Schulung für Computer und E-Mail.“</li>
+          <li>„Ich möchte vorher wissen, was Einrichtung oder Sicherheitscheck kosten.“</li>
+        </ul>
+        <div class="notice" style="margin-top:22px;">
+          Hinweis: Diese Website enthält Platzhalter für Impressum und Datenschutz. Vor echter Veröffentlichung sollten vollständige Anbieterangaben ergänzt werden.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <strong>BP Service Technik</strong><br>Mario Schirra<br>
+        Smart Home · Router · Netzwerk · Computer · Sicherheitscheck · Schulungen
+      </div>
+      <div>
+        Telefon: <a href="tel:015151450094">01515 1450094</a><br>
+        E-Mail: <a href="mailto:bp.service.technik@proton.me">bp.service.technik@proton.me</a>
+      </div>
+      <div>
+        Impressum · Datenschutz · Kontakt<br>
+        Angaben bitte vor Veröffentlichung ergänzen.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
