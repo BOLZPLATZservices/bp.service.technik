@@ -1,23 +1,31 @@
-Technikservice Internetauftritt mit Sicherheitscheck — GitHub Pages
+Technikservice Internetauftritt mit Terminkalender
 
 Enthalten:
 - index.html
 
-Neue Bereiche:
-- Sicherheitscheck als Leistung
-- Sicherheitscheck als eigener Seitenabschnitt
-- Router & WLAN
-- Smart Home
-- Computer & Daten
-- Passwörter & Konten
-- Smartphone
-- Checkliste für geprüfte Punkte
+Neu:
+- Terminkalender / Terminbuchung
+- Datumsauswahl
+- Uhrzeit-Slots
+- Leistungsauswahl
+- Terminanfrage per E-Mail
+- WhatsApp-Link
+- Hinweis auf echte Kalenderintegration
 
-GitHub Pages:
-1. Repository öffnen.
-2. Alte index.html durch diese neue index.html ersetzen.
-3. Settings → Pages prüfen.
-4. Nach kurzer Zeit ist die Änderung online.
+Wichtig:
+In der index.html musst du noch diese Platzhalter ersetzen:
 
-Wichtiger Hinweis auf der Website:
-Zugriff auf Router, Computer, Netzwerkgeräte, Smart-Home-Konfigurationen oder Anwendungen erfolgt nur nach ausdrücklicher Freigabe des Kunden. Passwörter werden nicht gespeichert.
+1. E-Mail:
+   deine-email@example.com
+
+2. WhatsApp-Nummer:
+   491234567890
+
+Beispiel für deutsche Nummer:
+0170 1234567 wird zu 491701234567
+
+GitHub Pages Upload:
+1. Alte index.html ersetzen.
+2. Neue index.html hochladen.
+3. Commit changes klicken.
+4. GitHub Pages aktualisiert die Website automatisch.
