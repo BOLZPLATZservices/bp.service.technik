@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BP Service Technik | Smart Home · Router · Netzwerk · Computer · Schulungen</title>
-  <meta name="description" content="BP Service Technik: Hilfe bei Smart Home, Router, WLAN, Netzwerk, Computer, Smartphone, Sicherheitscheck und verständlichen Technik-Schulungen. Termine online buchen.">
+  <meta name="description" content="BP Service Technik: Hilfe bei Smart Home, Router, WLAN, Netzwerk, Computer, Smartphone, Sicherheitscheck und verständlichen Technik-Schulungen. Anfragen per E-Mail senden.">
   <meta property="og:title" content="BP Service Technik">
   <meta property="og:description" content="Smart Home, Router, WLAN, Computer, Sicherheitscheck und Technik-Schulungen verständlich erklärt.">
   <meta property="og:type" content="website">
@@ -320,22 +320,84 @@
     }
 
 
-    .calendar-section .split{
-      grid-template-columns:1fr;
+
+    .request-box{
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:28px;
+      background:rgba(255,255,255,.045);
     }
-    .calendar-intro{
+    .request-form{
+      display:grid;
+      gap:14px;
+    }
+    .request-form input,
+    .request-form textarea,
+    .request-form select{
+      width:100%;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(0,0,0,.22);
+      color:white;
+      padding:15px 16px;
+      font-size:16px;
+      outline:none;
+    }
+    .request-form textarea{
+      min-height:150px;
+      resize:vertical;
+    }
+    .request-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:6px;
+    }
+    .request-button{
+      border:0;
+      border-radius:999px;
+      padding:15px 20px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      color:#061014;
+      font-weight:950;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:13px;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+    .request-button.secondary{
+      background:rgba(255,255,255,.06);
+      color:white;
+      border:1px solid var(--line);
+    }
+    .request-output{
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+      background:rgba(0,0,0,.18);
+      color:#dcebf0;
+      line-height:1.65;
+      min-height:92px;
+      white-space:pre-wrap;
+    }
+
+        .mail-intro{
       display:grid;
       grid-template-columns:.9fr 1.1fr;
       gap:24px;
       margin-bottom:24px;
     }
-    .calendar-actions{
+    .mail-actions{
       display:flex;
       flex-wrap:wrap;
       gap:12px;
       margin-top:22px;
     }
-    .calendar-button{
+    .mail-button{
       display:inline-flex;
       align-items:center;
       justify-content:center;
@@ -348,26 +410,12 @@
       letter-spacing:.12em;
       font-size:13px;
     }
-    .calendar-button.secondary{
+    .mail-button.secondary{
       background:rgba(255,255,255,.06);
       color:white;
       border:1px solid var(--line);
     }
-    .calendar-frame{
-      border:1px solid rgba(255,255,255,.20);
-      border-radius:30px;
-      padding:18px;
-      background:#000;
-      box-shadow:0 24px 80px rgba(0,0,0,.55);
-    }
-    .calendar-frame iframe{
-      display:block;
-      width:100%;
-      min-height:880px;
-      border:0;
-      border-radius:22px;
-      background:#fff;
-    }
+
     .legal-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -444,13 +492,6 @@
     }
     .price-note strong{color:white}
 
-    .calendar-wrap{
-      border:1px solid rgba(255,255,255,.18);
-      border-radius:30px;
-      padding:26px;
-      background:#000000;
-      box-shadow:0 24px 80px rgba(0,0,0,.45);
-    }
     .contact{
       display:grid;
       grid-template-columns:.9fr 1.1fr;
@@ -513,7 +554,7 @@
     }
     @media(max-width:1000px){
       .links{display:none}
-      .hero-grid,.split,.contact,.calendar-intro,.legal-grid{grid-template-columns:1fr}
+      .hero-grid,.split,.contact,.mail-intro,.legal-grid{grid-template-columns:1fr}
       .grid-3,.grid-4,.price-grid{grid-template-columns:repeat(2,1fr)}
       .steps{grid-template-columns:repeat(2,1fr)}
       .section-head{align-items:start;flex-direction:column}
@@ -544,11 +585,11 @@
         <a href="#schulungen">Schulungen</a>
         <a href="#preise">Preise</a>
         <a href="#sicherheitscheck">Sicherheitscheck</a>
-        <a href="#termin">Termin</a>
+        <a href="#anfrage">Anfrage</a>
         <a href="#kontakt">Kontakt</a>
         <a href="#impressum">Impressum</a>
       </div>
-      <a class="nav-cta" href="#termin">Termin buchen</a>
+      <a class="nav-cta" href="#anfrage">Anfrage senden</a>
     </div>
   </nav>
 
@@ -561,7 +602,7 @@
           Hilfe bei Smart Home, Router, WLAN, Netzwerk, Computer, Smartphone, Drucker, TV, Anwendungen und Sicherheitscheck. Dazu einfache Schulungen für Menschen, die ihre Technik wirklich verstehen und selbst bedienen möchten.
         </p>
         <div class="buttons">
-          <a class="btn primary" href="#termin">Termin online buchen</a>
+          <a class="btn primary" href="#anfrage">Anfrage per E-Mail</a>
           <a class="btn" href="#schulungen">Schulungen ansehen</a>
           <a class="btn" href="#preise">Preise ansehen</a>
           <a class="btn" href="#sicherheitscheck">Sicherheitscheck</a>
@@ -763,7 +804,7 @@
             <h3>Kleine Büros</h3>
             <p>Grundlagen für Selbstständige, Vereine oder kleine Arbeitsplätze.</p>
             <ul class="list">
-              <li>E-Mail und Kalender einrichten</li>
+              <li>E-Mail und Anfrage einrichten</li>
               <li>Datensicherung besprechen</li>
               <li>Gemeinsame Geräte verbinden</li>
               <li>Grundstruktur für Ordnung schaffen</li>
@@ -981,47 +1022,67 @@
 
       <div class="steps">
         <div class="step"><span>1</span><h3>Anfrage</h3><p class="small">Problem oder Wunsch kurz beschreiben: Router, WLAN, Smart Home, Computer, Schulung oder Sicherheitscheck.</p></div>
-        <div class="step"><span>2</span><h3>Termin</h3><p class="small">Online über Google-Kalender buchen oder telefonisch abstimmen.</p></div>
+        <div class="step"><span>2</span><h3>Termin</h3><p class="small">Per E-Mail anfragen oder telefonisch abstimmen.</p></div>
         <div class="step"><span>3</span><h3>Einrichtung</h3><p class="small">Geräte, Apps, Router oder Netzwerk sauber konfigurieren.</p></div>
         <div class="step"><span>4</span><h3>Erklärung</h3><p class="small">Alles verständlich zeigen, damit es danach selbst nutzbar ist.</p></div>
       </div>
     </div>
   </section>
 
-  <section id="termin" class="section-alt calendar-section">
-    <div class="wrap">
-      <div class="calendar-intro">
-        <div class="info-box">
-          <p class="eyebrow">Terminkalender</p>
-          <h2>Termin online buchen</h2>
-          <p>
-            Der Kalender ist bewusst groß und klar sichtbar eingebunden. Google selbst stellt den eingebetteten Kalender hell dar; deshalb bleibt die Kalenderfläche hell, damit Datum, Uhrzeit und Buchungsbutton lesbar sind.
-          </p>
-          <ul class="list">
-            <li>Smart Home Einrichtung</li>
-            <li>Router / WLAN / Repeater</li>
-            <li>Sicherheitscheck</li>
-            <li>Computer / Laptop Hilfe</li>
-            <li>Smartphone / Apps</li>
-            <li>Schulung und Erklärung</li>
-          </ul>
-        </div>
-
-        <div class="info-box">
-          <p class="eyebrow">Direkt buchen</p>
-          <h2>Freien Termin auswählen</h2>
-          <p>
-            Falls der eingebettete Kalender auf einem Handy oder alten Browser nicht richtig lädt, einfach den Kalender über den Button in einem neuen Fenster öffnen.
-          </p>
-          <div class="calendar-actions">
-            <a class="calendar-button" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2LqNOZzOujkOM3JADN1m4pYq2NUNpcoXv135sLJpkA7ceRGmkqhq0C__fq9yTNnGYWPI1FfaHU?gv=true" target="_blank" rel="noopener">Kalender groß öffnen</a>
-            <a class="calendar-button secondary" href="tel:015151450094">Telefonisch buchen</a>
-          </div>
+  <section id="anfrage" class="section-alt">
+    <div class="wrap split">
+      <div class="info-box">
+        <p class="eyebrow">E-Mail-Anfrage</p>
+        <h2>Anfrage senden</h2>
+        <p>
+          Beschreibe kurz, wobei Hilfe gebraucht wird. Die Seite erstellt daraus eine fertige E-Mail an <strong>bp.service.technik@proton.me</strong>.
+        </p>
+        <ul class="list">
+          <li>Smart Home Einrichtung</li>
+          <li>Router / WLAN / Repeater</li>
+          <li>Sicherheitscheck</li>
+          <li>Computer / Laptop Hilfe</li>
+          <li>Smartphone / Apps</li>
+          <li>Schulung und Erklärung</li>
+        </ul>
+        <div class="mail-actions">
+          <a class="mail-button" href="mailto:bp.service.technik@proton.me">Direkt E-Mail öffnen</a>
+          <a class="mail-button secondary" href="tel:015151450094">Telefonisch anfragen</a>
         </div>
       </div>
 
-      <div class="calendar-frame">
-        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2LqNOZzOujkOM3JADN1m4pYq2NUNpcoXv135sLJpkA7ceRGmkqhq0C__fq9yTNnGYWPI1FfaHU?gv=true" width="100%" height="880" frameborder="0" loading="lazy"></iframe>
+      <div class="request-box">
+        <p class="eyebrow">Anfrageformular</p>
+        <h2 style="font-size:clamp(28px,4vw,46px);margin-bottom:18px;">E-Mail vorbereiten</h2>
+        <form class="request-form" id="requestForm">
+          <input id="rqName" type="text" placeholder="Name">
+          <input id="rqPhone" type="tel" placeholder="Telefonnummer">
+          <input id="rqEmail" type="email" placeholder="E-Mail">
+          <select id="rqService">
+            <option>Smart Home Einrichtung</option>
+            <option>Router / WLAN / Repeater</option>
+            <option>Sicherheitscheck</option>
+            <option>Computer / Laptop Hilfe</option>
+            <option>Smartphone / Apps</option>
+            <option>TV / Fire TV / Telekommunikation</option>
+            <option>Schulung / Erklärung</option>
+            <option>KI-Hilfe / Erklärhilfe</option>
+            <option>Sonstige Technik-Hilfe</option>
+          </select>
+          <textarea id="rqMessage" placeholder="Kurz beschreiben, worum es geht. Beispiel: FritzBox einrichten, WLAN zu schwach, Kamera mit App verbinden, Sicherheitscheck, Smartphone erklären."></textarea>
+
+          <div class="request-output" id="requestOutput">
+Noch keine E-Mail-Anfrage erstellt.
+          </div>
+
+          <div class="request-actions">
+            <button class="request-button" type="button" id="makeRequest">E-Mail-Anfrage erstellen</button>
+            <a class="request-button secondary" id="mailLink" href="mailto:bp.service.technik@proton.me">Per E-Mail senden</a>
+          </div>
+          <p class="small">
+            Hinweis: Bei GitHub Pages wird keine Nachricht direkt auf der Website gespeichert. Beim Senden öffnet sich dein E-Mail-Programm mit der vorbereiteten Anfrage.
+          </p>
+        </form>
       </div>
     </div>
   </section>
@@ -1083,9 +1144,9 @@
             <strong>E-Mail</strong>
             bp.service.technik@proton.me
           </a>
-          <a class="contact-method" href="#termin">
-            <strong>Online-Termin</strong>
-            Direkt im Google-Kalender buchen
+          <a class="contact-method" href="#anfrage">
+            <strong>E-Mail-Anfrage</strong>
+            Anfrageformular ausfüllen und per E-Mail senden
           </a>
         </div>
       </div>
@@ -1102,9 +1163,7 @@
           <li>„Ich brauche eine Schulung für Computer und E-Mail.“</li>
           <li>„Ich möchte vorher wissen, was Einrichtung oder Sicherheitscheck kosten.“</li>
         </ul>
-        <div class="notice" style="margin-top:22px;">
-          Hinweis: Die Anbieterangaben und eine kurze Datenschutzerklärung sind unten auf der Seite ergänzt. Für eine rechtssichere Veröffentlichung sollte dies bei Bedarf noch fachlich geprüft werden.
-        </div>
+
       </div>
     </div>
   </section>
@@ -1161,7 +1220,7 @@
         <div class="legal-box">
           <h3>Kontaktaufnahme</h3>
           <p>
-            Wenn Sie per Telefon, E-Mail oder Kalender Kontakt aufnehmen, werden die von Ihnen angegebenen Daten zur Bearbeitung Ihrer Anfrage genutzt.
+            Wenn Sie per Telefon, E-Mail oder Anfrage Kontakt aufnehmen, werden die von Ihnen angegebenen Daten zur Bearbeitung Ihrer Anfrage genutzt.
           </p>
           <ul class="legal-list">
             <li>Name, falls angegeben</li>
@@ -1172,12 +1231,12 @@
         </div>
 
         <div class="legal-box">
-          <h3>Google-Terminkalender</h3>
+          <h3>E-Mail-Anfrage</h3>
           <p>
-            Für Online-Termine ist Google Calendar Appointment Scheduling eingebunden. Beim Öffnen oder Buchen eines Termins können Daten durch Google verarbeitet werden.
+            Die Anfrage wird über das E-Mail-Programm des Nutzers an bp.service.technik@proton.me vorbereitet. Auf dieser statischen Website werden keine Formulardaten gespeichert.
           </p>
           <p>
-            Wer das nicht möchte, kann den Termin auch telefonisch oder per E-Mail vereinbaren.
+            Alternativ ist eine Anfrage telefonisch unter <a href="tel:015151450094">01515 1450094</a> möglich.
           </p>
         </div>
 
@@ -1214,5 +1273,46 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    const makeRequest = document.getElementById("makeRequest");
+    const output = document.getElementById("requestOutput");
+    const mailLink = document.getElementById("mailLink");
+
+    function val(id) {
+      const el = document.getElementById(id);
+      return el ? el.value.trim() : "";
+    }
+
+    if (makeRequest && output && mailLink) {
+      makeRequest.addEventListener("click", () => {
+        const name = val("rqName") || "Nicht angegeben";
+        const phone = val("rqPhone") || "Nicht angegeben";
+        const userEmail = val("rqEmail") || "Nicht angegeben";
+        const service = val("rqService") || "Nicht angegeben";
+        const message = val("rqMessage") || "Keine Zusatzinfo";
+
+        const text =
+`Neue Anfrage BP Service Technik
+
+Name: ${name}
+Telefon: ${phone}
+E-Mail: ${userEmail}
+Bereich: ${service}
+
+Beschreibung:
+${message}
+
+Bitte um Rückmeldung zur Terminabsprache.`;
+
+        output.innerText = text;
+
+        const subject = encodeURIComponent("Anfrage BP Service Technik - " + service);
+        const body = encodeURIComponent(text);
+        mailLink.href = "mailto:bp.service.technik@proton.me?subject=" + subject + "&body=" + body;
+      });
+    }
+  </script>
+
 </body>
 </html>
