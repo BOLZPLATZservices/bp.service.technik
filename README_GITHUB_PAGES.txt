@@ -1,10 +1,21 @@
-BP Service Technik — finale GitHub-Version mit E-Mail-Anfrage
+BP Service Technik — kompakte GitHub-Version
+
+Eingetragen:
+Name: Mario Schirra
+Adresse: Am Sonnenhang 39, 66822 Lebach
+Telefon: 01515 1450094
+E-Mail: bp.service.technik@proton.me
+Homepage: https://bolzplatzservices.github.io/bp.service.technik/
 
 Änderung:
-- Der Hinweistext zur rechtssicheren Prüfung wurde entfernt.
-- Google Kalender ist entfernt.
-- E-Mail-Anfrage bleibt aktiv.
-- Preise, Sicherheitscheck, Schulungen, KI-Hilfe, FAQ, Impressum und Datenschutz bleiben drin.
+- Homepage viel kompakter und übersichtlicher
+- weniger lange Textblöcke
+- klare Reihenfolge
+- kompakte Leistungsübersicht
+- kompakte Preisübersicht
+- E-Mail-Anfrage bleibt drin
+- Google Kalender bleibt entfernt
+- keine Platzhalter
 
 Upload:
 1. ZIP entpacken.
