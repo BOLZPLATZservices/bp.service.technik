@@ -1,18 +1,20 @@
-BP Service Technik — kompakte GitHub-Version Mark Hardt
+BP Service Technik — finale GitHub-Version Mark Hardt
 
-Geändert:
-- Mario Schirra wurde überall durch Mark Hardt ersetzt.
-- Impressum / Anbieter bleibt:
-  Mark Hardt
-  Tholeyer Str. 112
-  66646 Marpingen
+Alle Namensangaben geändert:
+Mark Hardt
 
-Kontakt bleibt:
+Impressum / Anbieter:
+Mark Hardt
+Tholeyer Str. 112
+66646 Marpingen
+
+Kontakt:
 Telefon: 01515 1450094
 E-Mail: bp.service.technik@proton.me
 
-Upload:
+Upload bei GitHub:
 1. ZIP entpacken.
-2. index.html in GitHub hochladen.
+2. index.html in das Repository bp.service.technik hochladen.
 3. Alte index.html ersetzen.
 4. Commit changes klicken.
+5. GitHub Pages aktualisiert die Website automatisch.
